@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title> {{ 'LOGIN.title' | translate }}</ion-title>
+    <ion-title class="title"> {{ 'LOGIN.title' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -28,7 +28,8 @@
   </form>
   <ion-item>
     <ion-label>Language: {{isModifiedLng ?  'French' : 'English'}}</ion-label>
-    <ion-toggle slot="start" name="lng" color="light" [(ngModel)]="isModifiedLng" (ionChange)="stateChange($event)">
+    <ion-toggle slot="start" name="lng" color="light" class="lngToggle" [(ngModel)]="isModifiedLng"
+      (ionChange)="stateChange($event)">
     </ion-toggle>
   </ion-item>
 </ion-content>

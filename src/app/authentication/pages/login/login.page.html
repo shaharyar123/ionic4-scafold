@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form onsubmit="processForm(event)">
+    <ion-item>
+      <ion-label position="stacked">Email <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Password <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="password"></ion-input>
+    </ion-item>
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin">Login</ion-button>
+    </div>
+  </form>
+</ion-content>

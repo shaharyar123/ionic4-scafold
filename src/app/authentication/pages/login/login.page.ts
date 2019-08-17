@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguageService } from 'src/app/services/language/language.service';
 
 @Component({
   selector: 'app-login',
@@ -6,12 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
-  constructor() { }
+  isModifiedLng = false;
+  constructor(private languageService: LanguageService) { }
 
   ngOnInit() {
   }
   processForm() {
+    console.log('submitted')
+  }
+
+  stateChange() {
+    this.languageService.setLanguage(this.isModifiedLng ? 'fr' : 'en');
 
   }
 

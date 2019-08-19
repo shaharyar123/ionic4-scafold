@@ -7,7 +7,7 @@
 <ion-content>
 
 
-  <form (ngSubmit)="processForm(event)">
+  <form (ngSubmit)="processForm()">
     <ion-item>
       <ion-label position="stacked">{{ 'LOGIN.email' | translate }} <ion-text color="danger">*</ion-text>
       </ion-label>
@@ -29,7 +29,7 @@
   <ion-item>
     <ion-label>Language: {{isModifiedLng ?  'French' : 'English'}}</ion-label>
     <ion-toggle slot="start" name="lng" color="light" class="lngToggle" [(ngModel)]="isModifiedLng"
-      (ionChange)="stateChange($event)">
+      (ionChange)="stateChange()">
     </ion-toggle>
   </ion-item>
 </ion-content>

@@ -3,33 +3,7 @@
     <ion-title class="title"> {{ 'LOGIN.title' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
 
-
-  <form (ngSubmit)="processForm()">
-    <ion-item>
-      <ion-label position="stacked">{{ 'LOGIN.email' | translate }} <ion-text color="danger">*</ion-text>
-      </ion-label>
-      <ion-input required type="email"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="stacked">{{ 'LOGIN.password' | translate }} <ion-text color="danger">*</ion-text>
-      </ion-label>
-      <ion-input required type="password"></ion-input>
-    </ion-item>
-
-    <div class="ion-padding">
-      <ion-button expand="block" type="submit" class="ion-no-margin">{{ 'LOGIN.submit' | translate }}</ion-button>
-    </div>
-
-
-  </form>
-  <ion-item>
-    <ion-label>Language: {{isModifiedLng ?  'French' : 'English'}}</ion-label>
-    <ion-toggle slot="start" name="lng" color="light" class="lngToggle" [(ngModel)]="isModifiedLng"
-      (ionChange)="stateChange()">
-    </ion-toggle>
-  </ion-item>
+  <app-login-form></app-login-form>
 </ion-content>

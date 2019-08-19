@@ -1,19 +1,24 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { LoginPage } from './login.page';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { createTranslateLoader } from 'src/app/app.module';
-import { HttpClient } from '@angular/common/http';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-describe('LoginPage', () => {
-  let component: LoginPage;
-  let fixture: ComponentFixture<LoginPage>;
+import { LoginFormComponent } from './login-form.component';
+import { createTranslateLoader } from '../../../app.module';
+import { CommonModule } from '@angular/common';
+import {
+  HttpClientTestingModule
+} from '@angular/common/http/testing';
+import { LanguageService } from '../../../services/language/language.service';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+describe('LoginFormComponent', () => {
+  let component: LoginFormComponent;
+  let fixture: ComponentFixture<LoginFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [LoginPage],
+      declarations: [LoginFormComponent],
       imports: [
+        CommonModule,
         HttpClientTestingModule,
         TranslateModule.forRoot({
           loader: {
@@ -22,13 +27,14 @@ describe('LoginPage', () => {
             deps: [HttpClient]
           }
         })],
+      providers: [LanguageService],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginPage);
+    fixture = TestBed.createComponent(LoginFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -36,5 +42,4 @@ describe('LoginPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
 });
